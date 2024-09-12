@@ -4326,6 +4326,22 @@ MonoBehaviour:
   - {fileID: 731951641}
   - {fileID: 1044411}
   - {fileID: 559337323}
+  - {fileID: 34745105}
+  - {fileID: 262884310}
+  - {fileID: 917905467}
+  - {fileID: 1509739352}
+  - {fileID: 20290096}
+  enemyToActive:
+  - {fileID: 1958229135}
+  - {fileID: 1908057441}
+  - {fileID: 187514655}
+  - {fileID: 1698709735}
+  - {fileID: 696619074}
+  - {fileID: 169746030}
+  - {fileID: 1569087665}
+  - {fileID: 271287372}
+  - {fileID: 335996873}
+  - {fileID: 458855112}
 --- !u!50 &976463732
 Rigidbody2D:
   serializedVersion: 4

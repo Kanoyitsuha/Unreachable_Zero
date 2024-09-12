@@ -703,6 +703,39 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &378109333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378109329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9c5d13674007f04ca1bfc86cccf1dbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10000
+  ItemDrops: []
+  damageSound: {fileID: 8300000, guid: 640c451485fee124e9a3d76cb2ce9a83, type: 3}
+  movementType: 0
+  moveSpeed: 0
+  entryPoint: {x: 0, y: 0}
+  patrolDistance: 0
+  wanderRadius: 0
+  wanderInterval: 0
+  frequency: 0
+  amplitude: 0
+  hasEnteredScene: 0
+  spawnerType: 2
+  bulletPrefab: {fileID: 6404551892906686690, guid: 6d6f66764e58f944897f284eb31ba573, type: 3}
+  firingRate: 1
+  bulletSpeed: 2
+  bulletLife: 1
+  bulletsPerRound: 8
+  bulletsPerSpread: 5
+  spreadAngle: 45
+  spiralRotationSpeed: 30
 --- !u!1 &400670372
 GameObject:
   m_ObjectHideFlags: 0
@@ -3483,6 +3516,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: moveSpeed
       value: 0
       objectReference: {fileID: 0}
@@ -3554,10 +3591,17 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9098603173380889517, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      propertyPath: m_TagString
+      value: Boss
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9098603173380889517, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 378109333}
     - targetCorrespondingSourceObject: {fileID: 9098603173380889517, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 378109330}
