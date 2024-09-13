@@ -6740,6 +6740,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ghost (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 9098603173380889517, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     m_RemovedGameObjects: []
@@ -6963,6 +6967,10 @@ PrefabInstance:
     - target: {fileID: 9098603173380889517, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_Name
       value: Ghost (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098603173380889517, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
@@ -7697,6 +7705,12 @@ MonoBehaviour:
   - {fileID: 731951641}
   - {fileID: 1044411}
   - {fileID: 559337323}
+  enemyToActive:
+  - {fileID: 1509739344}
+  - {fileID: 20290093}
+  - {fileID: 34745102}
+  - {fileID: 262884307}
+  - {fileID: 917905464}
 --- !u!50 &976463732
 Rigidbody2D:
   serializedVersion: 4
@@ -8841,6 +8855,10 @@ PrefabInstance:
     - target: {fileID: 9098603173380889517, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_Name
       value: Ghost (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9098603173380889517, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
