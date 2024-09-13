@@ -13,6 +13,7 @@ public class TutorialManager : MonoBehaviour
     // Reference to the Next button (optional for manual progression)
     public Button nextButton;
     public Button backButton;  // Optional Back button for navigating backward
+    public GameObject[] TickButton;
     public AudioSource audioSource;
     public AudioClip SpacebarSound;
 
@@ -22,6 +23,11 @@ public class TutorialManager : MonoBehaviour
         foreach (GameObject page in tutorialPages)
         {
             page.SetActive(false);
+        }
+
+        foreach(GameObject Tick in TickButton)
+        {
+            Tick.SetActive(false);
         }
 
         // Show the first tutorial page
@@ -46,6 +52,7 @@ public class TutorialManager : MonoBehaviour
             PlaySpacebarSound();
             NextScene();  // Call the function to load the next scene
         }
+        TickButtonManager();
     }
 
     // Show the current tutorial page
@@ -110,5 +117,17 @@ public class TutorialManager : MonoBehaviour
 
         }
 
+    }
+
+    public void TickButtonManager()
+    {
+        if (currentPage >= 2)
+        {
+            foreach (GameObject Tick in TickButton)
+            {
+                Tick.SetActive(true);
+
+            }
+        }
     }
 }

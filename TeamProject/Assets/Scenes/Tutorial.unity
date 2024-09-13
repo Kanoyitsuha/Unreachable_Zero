@@ -264,6 +264,8 @@ MonoBehaviour:
   - {fileID: 1780342038}
   nextButton: {fileID: 874936365}
   backButton: {fileID: 1856906014}
+  TickButton:
+  - {fileID: 296081434}
   audioSource: {fileID: 0}
   SpacebarSound: {fileID: 0}
 --- !u!4 &122537207
@@ -430,7 +432,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 296081437}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 122537206}
+        m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+        m_MethodName: NextScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &296081437
 MonoBehaviour:
   m_ObjectHideFlags: 0
