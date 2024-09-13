@@ -6,6 +6,8 @@ using UnityEngine;
 using UnityEngine.UI;
 public class Weapon : MonoBehaviour
 {
+    public static Weapon instance;
+
     [SerializeField] public Transform firePoint1;
     [SerializeField] public Transform firePoint2;
     [SerializeField] public Transform firePoint3;
@@ -41,7 +43,17 @@ public class Weapon : MonoBehaviour
 
     private void Awake()
     {
-        anim = GetComponent<Animator>();
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+            anim = GetComponent<Animator>();
         pMove = GetComponent<playerMovement>();
         WeaponType = 0;
         audioSource = GetComponent<AudioSource>();
