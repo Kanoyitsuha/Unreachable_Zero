@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
     public int currentHealth;
     public HealthBar healthBar;
     public Weapon weapon;
+    public GameObject explosionPrefab;
 
 
     // Start is called before the first frame update
@@ -88,6 +89,11 @@ public class PlayerHealth : MonoBehaviour
  private void Die()
     {
         Destroy(gameObject);
+      
+        
+            // Instantiate the explosion at the character's position
+            Instantiate(explosionPrefab, transform.position, transform.rotation);
+        
     }
 
 }
