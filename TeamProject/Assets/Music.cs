@@ -1,54 +1,102 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using System;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
-public class SceneMusicManager : MonoBehaviour
+public class Music : MonoBehaviour
 {
-    public AudioSource titleMusic;  // Assign in Inspector
-    public AudioSource tutorialMusic;
-    public AudioSource gameMusic;   // Assign in Inspector
+    public static Music instance;
+    public Sound[] music, sfx;
+    public AudioSource musicSource, sfxSource;
+    private int currentSceneIndex;
+    private bool musicChangedForScene1 = false;
+
+
+    public void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+    }
 
     private void Start()
     {
-        Scene currentScene = SceneManager.GetActiveScene();
-
-        if (currentScene.name == "Title")
-        {
-            PlayMusic(titleMusic);
-        }
-        else if (currentScene.name == "Tutorial")
-        {
-            PlayMusic(tutorialMusic);
-        }
-
-        else if (currentScene.name == "Game1")
-        {
-            PlayMusic(gameMusic);
-        }
+        PlayMusic("Title");
     }
 
-    private void PlayMusic(AudioSource music)
+    private void Update()
     {
-        // Stop any currently playing music
-        if (titleMusic.isPlaying) 
-        { 
-            gameMusic.Stop();
-            tutorialMusic.Stop(); 
-        }
+        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
-        if (tutorialMusic.isPlaying)
+        if (currentSceneIndex == 2 && !musicChangedForScene1)
         {
-            titleMusic.Stop();
-            gameMusic.Stop();
+            PlayMusic("Game");
+            musicChangedForScene1 = true;
         }
 
-        if (gameMusic.isPlaying)
-        {
-            titleMusic.Stop();
-            tutorialMusic.Stop();
-        }
-
-
-        // Play the new music
-        music.Play();
     }
+
+
+
+    public void PlayMusic(string name)
+    {
+        Sound s = Array.Find(music, x => x.name == name);
+        if (s == null)
+        {
+            Debug.Log("Didn't have Sound");
+        }
+
+        else
+        {
+            musicSource.clip = s.clip;
+            musicSource.Play();
+
+        }
+    }
+
+    public void PlaySE(string name)
+    {
+        Sound s = Array.Find(sfx, x => x.name == name);
+        if (s == null)
+        {
+            Debug.Log("Didn't have Sound");
+        }
+
+        else
+        {
+            sfxSource.PlayOneShot(s.clip);
+        }
+    }
+
+    public void ToogleMusic()
+    {
+        musicSource.mute = !musicSource.mute;
+
+    }
+
+    public void ToogleSFX()
+    {
+        sfxSource.mute = !sfxSource.mute;
+
+    }
+    public void musicVolume(float volume)
+    {
+        musicSource.volume = volume;
+    }
+    public void sfxVolume(float volume)
+    {
+        sfxSource.volume = volume;
+    }
+
+
 }

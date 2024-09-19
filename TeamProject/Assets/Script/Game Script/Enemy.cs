@@ -6,8 +6,8 @@ public class Enemy : MonoBehaviour
 {
     public int health = 100;
     public GameObject[] ItemDrops;
-    public AudioClip damageSound;
-    private AudioSource audioSource;
+    //public AudioClip damageSound;
+    //private AudioSource audioSource;
 
     public enum SpawnerType
     {
@@ -73,9 +73,9 @@ public class Enemy : MonoBehaviour
 
     public void Start()
     {
-        audioSource = gameObject.AddComponent<AudioSource>();
-        audioSource.playOnAwake = false; // Prevents the sound from playing automatically on start
-        audioSource.clip = damageSound;  // Sets the damage sound clip to the AudioSource
+        //audioSource = gameObject.AddComponent<AudioSource>();
+        //audioSource.playOnAwake = false; // Prevents the sound from playing automatically on start
+        //audioSource.clip = damageSound;  // Sets the damage sound clip to the AudioSource
         startPosition = transform.position;
         patrolStartX = entryPoint.x - patrolDistance;
         patrolEndX = entryPoint.x + patrolDistance;
@@ -119,7 +119,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
-        PlayDamageSound();
+        Music.instance.PlaySE("Enemy Hit");
         if (health <= 0)
             Die();
 
@@ -144,18 +144,18 @@ public class Enemy : MonoBehaviour
 
     }
 
-    private void PlayDamageSound()
-    {
+    //private void PlayDamageSound()
+    //{
 
-        if (audioSource != null && damageSound != null)
-        {
-            audioSource.PlayOneShot(damageSound);  // Play the damage sound effect
-        }
-        else
-        {
-            Debug.LogWarning("AudioSource or damage sound is not assigned!");
-        }
-    }
+    //    if (audioSource != null && damageSound != null)
+    //    {
+    //        audioSource.PlayOneShot(damageSound);  // Play the damage sound effect
+    //    }
+    //    else
+    //    {
+    //        Debug.LogWarning("AudioSource or damage sound is not assigned!");
+    //    }
+    //}
 
     private void ItemDrop()
     {

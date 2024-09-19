@@ -37,8 +37,8 @@ public class Weapon : MonoBehaviour
     private playerMovement pMove;
     public int WeaponType;
 
-    public AudioClip shootingSound;
-    private AudioSource audioSource;
+    //public AudioClip shootingSound;
+    //private AudioSource audioSource;
 
 
     private void Awake()
@@ -56,13 +56,13 @@ public class Weapon : MonoBehaviour
             anim = GetComponent<Animator>();
         pMove = GetComponent<playerMovement>();
         WeaponType = 0;
-        audioSource = GetComponent<AudioSource>();
-        if (audioSource == null)
-        {
-            audioSource = gameObject.AddComponent<AudioSource>();  // Adds an AudioSource if not already present
-        }
-        audioSource.clip = shootingSound;
-        audioSource.playOnAwake = false;
+        //audioSource = GetComponent<AudioSource>();
+        //if (audioSource == null)
+        //{
+        //    audioSource = gameObject.AddComponent<AudioSource>();  // Adds an AudioSource if not already present
+        //}
+        //audioSource.clip = shootingSound;
+        //audioSource.playOnAwake = false;
     }
 
     // Update is called once per frame
@@ -125,20 +125,19 @@ public class Weapon : MonoBehaviour
     {
 
         Instantiate(bulletPrefab, firePoint3.position, Quaternion.identity);
-        PlayShootingSound();
+        Music.instance.PlaySE("Attack");
     }
 
     void LazerShoot()
      {
         Instantiate(LazerPrefab,firePoint3.position, Quaternion.identity);
-        PlayShootingSound();
-
+        Music.instance.PlaySE("Attack");
     }
 
     void TrackingShoot()
     {
         Instantiate(TrackingPrefab,firePoint3.position, Quaternion.identity);
-        PlayShootingSound();
+        Music.instance.PlaySE("Attack");
 
     }
     void FanShoot()
@@ -148,13 +147,13 @@ public class Weapon : MonoBehaviour
         Instantiate(FanPrefab,firePoint3.position, firePoint3.rotation);
         Instantiate(FanPrefab,firePoint4.position, firePoint4.rotation);
         Instantiate(FanPrefab,firePoint5.position, firePoint5.rotation);
-        PlayShootingSound();
+        Music.instance.PlaySE("Attack");
     }
 
     void CharmShoot()
     {
         Instantiate(CharmPrefab,transform.position,Quaternion.identity);
-        PlayShootingSound();
+        Music.instance.PlaySE("Attack");
     }
 
     public void WeaponTimer()
@@ -170,19 +169,19 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    private void PlayShootingSound()
-    {
+    //private void PlayShootingSound()
+    //{
 
-        if (audioSource != null && shootingSound != null ) 
-        {
-            audioSource.PlayOneShot(shootingSound);  // Plays the shooting sound once
+    //    if (audioSource != null && shootingSound != null ) 
+    //    {
+    //        audioSource.PlayOneShot(shootingSound);  // Plays the shooting sound once
           
-        }
-        else
-        {
-            Debug.LogWarning("Shooting sound not assigned or AudioSource is missing!");
-        }
-    }
+    //    }
+    //    else
+    //    {
+    //        Debug.LogWarning("Shooting sound not assigned or AudioSource is missing!");
+    //    }
+    //}
     public void ResetWeaponTimer()
     {
         weaponTimer = setTimer;
