@@ -1,9 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class Enemy : MonoBehaviour
 {
+    [Header("Health Attributes")]
+    public int maxHealth = 100;
+    private int currentHealth;
+    private bool isActive = true;
     public int health = 100;
     public GameObject[] ItemDrops;
     //public AudioClip damageSound;
@@ -47,7 +53,7 @@ public class Enemy : MonoBehaviour
     private float originalY;
 
     [Header("Spawner Attributes")]
-    public SpawnerType spawnerType = SpawnerType.Straight;
+    public SpawnerType spawnerType = SpawnerType.Spin;
     public GameObject bulletPrefab;
     public float firingRate = 1.0f;
     public float bulletSpeed = 7.0f;
@@ -76,6 +82,7 @@ public class Enemy : MonoBehaviour
         //audioSource = gameObject.AddComponent<AudioSource>();
         //audioSource.playOnAwake = false; // Prevents the sound from playing automatically on start
         //audioSource.clip = damageSound;  // Sets the damage sound clip to the AudioSource
+        currentHealth = maxHealth;
         startPosition = transform.position;
         patrolStartX = entryPoint.x - patrolDistance;
         patrolEndX = entryPoint.x + patrolDistance;
@@ -85,6 +92,16 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+        if (!isActive) return;
+
+        timer += Time.deltaTime;
+        if (timer >= firingRate)
+        {
+            SpawnBullets();
+            timer = 0;
+        }
+
+
         if (!hasEnteredScene)
         {
             MoveIntoScene();
@@ -106,24 +123,23 @@ public class Enemy : MonoBehaviour
                     UpDownMovement();
                     break;
             }
-
-            timer += Time.deltaTime;
-            if (timer >= firingRate)
-            {
-                SpawnBullets();
-                timer = 0f; // Reset the timer after firing
-            }
         }
     }
 
+
+
     public void TakeDamage(int damage)
     {
-        health -= damage;
-        Music.instance.PlaySE("Enemy Hit");
-        if (health <= 0)
+        currentHealth -= damage;
+        PlayExplosionSound();
+        if (currentHealth <= 0)
+        {
             Die();
-
+        }
     }
+
+
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -140,7 +156,8 @@ public class Enemy : MonoBehaviour
         {
             OnEnemyDeath.Invoke();
         }
-
+        isActive = false;
+        Music.instance.PlaySE("Easter Egg");
 
     }
 
@@ -246,14 +263,26 @@ public class Enemy : MonoBehaviour
     void FireSpin()
     {
         float angleStep = 360f / bulletsPerRound;
-        float angle = spinAngle;
+        float spiralRadius = 0.1f;
+        float currentAngle = spinAngle;
 
         for (int i = 0; i < bulletsPerRound; i++)
         {
-            GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.Euler(0, 0, angle));
-            bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad)) * bulletSpeed;
+            float bulletDirX = Mathf.Cos(currentAngle * Mathf.Deg2Rad);
+            float bulletDirY = Mathf.Sin(currentAngle * Mathf.Deg2Rad);
+
+            Vector2 bulletDirection = new Vector2(bulletDirX, bulletDirY).normalized;
+
+            Vector2 spawnPosition = new Vector2(transform.position.x + bulletDirX * spiralRadius, transform.position.y + bulletDirY * spiralRadius);
+
+            GameObject bullet = Instantiate(bulletPrefab, spawnPosition, Quaternion.identity);
+            bullet.GetComponent<Rigidbody2D>().velocity = bulletDirection * bulletSpeed;
+
+            spiralRadius += 0.1f;
+
             Destroy(bullet, bulletLife);
-            angle += angleStep;
+
+            currentAngle += angleStep;
         }
 
         spinAngle += 10f;
@@ -291,12 +320,34 @@ public class Enemy : MonoBehaviour
 
     void FireSpiral()
     {
-        float angleStep = spiralRotationSpeed * Time.deltaTime;
-        spiralAngle += angleStep;
+        int bulletsPerRound = 8;
+        spiralAngle += spiralRotationSpeed;
+        float angleStep = 360f / bulletsPerRound;
 
-        GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.Euler(0, 0, spiralAngle));
-        bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(-Mathf.Cos(spiralAngle * Mathf.Deg2Rad), -Mathf.Sin(spiralAngle * Mathf.Deg2Rad)) * bulletSpeed;
-        Destroy(bullet, bulletLife);
+        for (int i = 0; i < bulletsPerRound; i++)
+        {
+            float currentAngle = spiralAngle + (i * angleStep);
+            float bulletDirX = Mathf.Cos(currentAngle * Mathf.Deg2Rad);
+            float bulletDirY = Mathf.Sin(currentAngle * Mathf.Deg2Rad);
+            Vector2 bulletDirection = new Vector2(bulletDirX, bulletDirY).normalized;
+
+            GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+            bullet.GetComponent<Rigidbody2D>().velocity = bulletDirection * bulletSpeed;
+            Destroy(bullet, bulletLife);
+        }
+
+        for (int i = 0; i < bulletsPerRound; i++)
+        {
+            float currentAngle = spiralAngle + (i * angleStep);
+            float bulletDirX = Mathf.Cos(currentAngle * Mathf.Deg2Rad);
+            float bulletDirY = Mathf.Sin(currentAngle * Mathf.Deg2Rad);
+            Vector2 bulletDirection = new Vector2(bulletDirX, bulletDirY).normalized;
+
+            Vector2 spawnPosition = new Vector2(transform.position.x + bulletDirX * 0.5f, transform.position.y + bulletDirY * 0.5f);
+            GameObject bullet = Instantiate(bulletPrefab, spawnPosition, Quaternion.identity);
+            bullet.GetComponent<Rigidbody2D>().velocity = bulletDirection * bulletSpeed;
+            Destroy(bullet, bulletLife);
+        }
     }
     void MoveIntoScene()
     {
@@ -337,7 +388,6 @@ public class Enemy : MonoBehaviour
             Vector2 randomDirection = Random.insideUnitCircle.normalized * wanderRadius;
             targetPosition = new Vector2(entryPoint.x + randomDirection.x, entryPoint.y + randomDirection.y);
         }
-
         transform.position = Vector2.Lerp(transform.position, targetPosition, moveSpeed * Time.deltaTime);
     }
 
@@ -353,5 +403,20 @@ public class Enemy : MonoBehaviour
     {
         float newY = originalY + Mathf.Sin(Time.time * frequency) * amplitude;
         transform.position = new Vector2(transform.position.x, newY);
+    }
+
+    private void PlayExplosionSound()
+    {
+        
+        float randomValue = Random.Range(0f, 1f);
+
+        if (randomValue < 0.01f)
+        {
+            Music.instance.PlaySE("Easter Egg");
+        }
+        else
+        {
+            Music.instance.PlaySE("Enemy Hit");
+        }
     }
 }

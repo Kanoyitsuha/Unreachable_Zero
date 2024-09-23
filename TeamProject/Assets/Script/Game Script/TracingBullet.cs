@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
@@ -61,6 +62,11 @@ public class TracingBullet : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             collision.GetComponent<Enemy>().TakeDamage(damage);
+            Destroy(gameObject);
+        }
+        if (collision.CompareTag("Boss"))
+        {
+            collision.GetComponent<BossShoot>().TakeDamage(damage);
             Destroy(gameObject);
         }
 

@@ -37,8 +37,13 @@ void OnTriggerEnter2D(Collider2D hitInfo)
         enemy.TakeDamage(damage);
         
     }
-
-}
+        BossShoot boss = hitInfo.GetComponent<BossShoot>();
+        if (boss != null)
+        {
+            boss.TakeDamage(damage);
+            Destroy(gameObject);
+        }
+    }
 
 
 

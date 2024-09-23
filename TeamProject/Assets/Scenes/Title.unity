@@ -1416,9 +1416,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   music:
   - name: Game
-    clip: {fileID: 8300000, guid: 4a949d75816895e46955f1633122205f, type: 3}
+    clip: {fileID: 8300000, guid: 4159c31a0fab5cb46a33ff66ef54444c, type: 3}
   - name: Title
     clip: {fileID: 8300000, guid: 02c0105e1d623b645a1f64ab1fd027cb, type: 3}
+  - name: Game Over
+    clip: {fileID: 8300000, guid: 8f6d2d1eded25cd46b830c5b1b6d02e5, type: 3}
+  - name: CutScene 1
+    clip: {fileID: 8300000, guid: 3a2a23e806415ec4cb890aefe359c448, type: 3}
+  - name: CutScene 2
+    clip: {fileID: 8300000, guid: e6b623209e2710c4288a3a7d6f574467, type: 3}
+  - name: Boss 1
+    clip: {fileID: 8300000, guid: 25f41c968193fc34593355ae73c099c2, type: 3}
+  - name: Boss 2
+    clip: {fileID: 8300000, guid: 8798df1936197b043a1ca6424844b690, type: 3}
+  - name: Boss 3
+    clip: {fileID: 8300000, guid: 3c4e2fcd16353f94babb06a843a671c1, type: 3}
   sfx:
   - name: Easter Egg
     clip: {fileID: 8300000, guid: 640c451485fee124e9a3d76cb2ce9a83, type: 3}
@@ -1426,6 +1438,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: f94bc3b6f832d504eb1a1ff6591e2e3c, type: 3}
   - name: Enemy Hit
     clip: {fileID: 8300000, guid: b996a40da22d74b45964512aedfb83ba, type: 3}
+  - name: PlayerDie
+    clip: {fileID: 8300000, guid: d8d42ec8907f82e47b1f1c367e48447e, type: 3}
   musicSource: {fileID: 1545105472}
   sfxSource: {fileID: 172580205}
 --- !u!1 &779062111
