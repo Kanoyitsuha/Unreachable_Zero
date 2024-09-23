@@ -48,8 +48,7 @@ public class BossShoot : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        Music.instance.StopMusic();
-        randomMusic();
+        
     }
 
     void Update()
@@ -220,16 +219,5 @@ public class BossShoot : MonoBehaviour
                 Music.instance.PlaySE("Enemy Hit");
             }
         }
-    void randomMusic()
-    {
-        float randomValue = Random.Range(0f, 1f);
-
-        if (randomValue < 0.3f)
-            Music.instance.PlayMusic("Boss 1");
-        if (randomValue < 0.6f && randomValue > 0.3f)
-            Music.instance.PlayMusic("Boss 2");
-        else
-            Music.instance.PlayMusic("Boss 3");
-
-    }
+    
 }

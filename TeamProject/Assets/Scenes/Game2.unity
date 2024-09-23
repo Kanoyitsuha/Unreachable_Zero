@@ -14806,6 +14806,7 @@ MonoBehaviour:
   healthBar: {fileID: 209587763}
   weapon: {fileID: 2024167050}
   explosionPrefab: {fileID: 1520174855}
+  gameOver: {fileID: 2058804650}
 --- !u!114 &2024167050
 MonoBehaviour:
   m_ObjectHideFlags: 0

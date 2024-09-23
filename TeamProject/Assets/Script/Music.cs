@@ -39,6 +39,29 @@ public class Music : MonoBehaviour
     {
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
+
+        switch(currentSceneIndex)
+        {
+            case 1:
+                PlayMusic("Cutscene 1");
+                break;
+            case 2:
+                PlayMusic("Title");
+                break;
+            case 3:
+            case 4:
+                PlayMusic("Game");
+                break;
+            case 5:
+                randomMusic();
+                break;
+            case 6:
+                PlayMusic("Cutscene 2");
+                break;
+            default:
+                PlayMusic("Title");
+                break;
+        }
         if (currentSceneIndex == 2 && !musicChangedForScene1)
         {
             PlayMusic("Game");
@@ -130,5 +153,16 @@ public class Music : MonoBehaviour
         musicSource.Stop();
         currentTime = 0;
     }
+    void randomMusic()
+    {
+        float randomValue = UnityEngine.Random.Range(0f, 1f);
 
+        if (randomValue < 0.3f)
+            Music.instance.PlayMusic("Boss 1");
+        if (randomValue < 0.6f && randomValue > 0.3f)
+            Music.instance.PlayMusic("Boss 2");
+        else
+            Music.instance.PlayMusic("Boss 3");
+
+    }
 }

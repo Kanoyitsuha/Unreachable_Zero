@@ -7,23 +7,23 @@ public class GameOverScript : MonoBehaviour
 {
     public GameObject gameoverUI;
 
-
     public void GameOver()
     {
-
+        Time.timeScale = 0;
         gameoverUI.SetActive(true);
         Music.instance.PlayMusic("Game Over");
 
     }
     public void restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Game1");
         Music.instance.StopMusic();
-        Music.instance.PlayMusic("Game");
     }
 
     public void MainMenu()
     {
         SceneManager.LoadScene("Title");
+        Time.timeScale = 1;
     }
 }

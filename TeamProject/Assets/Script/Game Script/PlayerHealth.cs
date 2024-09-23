@@ -9,6 +9,7 @@ public class PlayerHealth : MonoBehaviour
     public HealthBar healthBar;
     public Weapon weapon;
     public GameObject explosionPrefab;
+    public GameOverScript gameOver;
 
 
     // Start is called before the first frame update
@@ -89,11 +90,12 @@ public class PlayerHealth : MonoBehaviour
  private void Die()
     {
         Destroy(gameObject);
-      
-        
-            // Instantiate the explosion at the character's position
-            Instantiate(explosionPrefab, transform.position, transform.rotation);
-        
+        Instantiate(explosionPrefab, transform.position, transform.rotation);
+        gameOver.GameOver();
+        Music.instance.StopMusic();
+        Music.instance.PlaySE("Player Die");
+
+
     }
 
 }
