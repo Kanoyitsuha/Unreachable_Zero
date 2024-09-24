@@ -11,8 +11,9 @@ public class Music : MonoBehaviour
     public Sound[] music, sfx;
     public AudioSource musicSource, sfxSource;
     private int currentSceneIndex;
-    private bool musicChangedForScene1 = false;
+
     private float currentTime = 0;
+    private string currentMusicName = "";
 
 
     public void Awake()
@@ -40,10 +41,10 @@ public class Music : MonoBehaviour
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
 
-        switch(currentSceneIndex)
+        switch (currentSceneIndex)
         {
             case 1:
-                PlayMusic("Cutscene 1");
+                PlayMusic("CutScene 1");
                 break;
             case 2:
                 PlayMusic("Title");
@@ -56,27 +57,32 @@ public class Music : MonoBehaviour
                 randomMusic();
                 break;
             case 6:
-                PlayMusic("Cutscene 2");
+                PlayMusic("CutScene 2");
                 break;
-            default:
-                PlayMusic("Title");
-                break;
-        }
-        if (currentSceneIndex == 2 && !musicChangedForScene1)
-        {
-            PlayMusic("Game");
-            musicChangedForScene1 = true;
-        }
 
-        if (currentSceneIndex == 0 && musicChangedForScene1)
-        {
-            PlayMusic("Title");
-            musicChangedForScene1 = false;
         }
+        //if (currentSceneIndex == 2 && !musicChangedForScene1)
+        //{
+        //    PlayMusic("Game");
+        //    musicChangedForScene1 = true;
+        //}
+
+        //if (currentSceneIndex == 0 && musicChangedForScene1)
+        //{
+        //    PlayMusic("Title");
+        //    musicChangedForScene1 = false;
+        //}
 
     }
 
-
+    private void PlayMusicIfNotAlreadyPlaying(string musicName)
+    {
+        if (currentMusicName != musicName)  // Only change music if it's different
+        {
+            PlayMusic(musicName);
+            currentMusicName = musicName;  // Track currently playing music
+        }
+    }
 
     public void PlayMusic(string name)
     {
@@ -85,13 +91,13 @@ public class Music : MonoBehaviour
         {
             Debug.Log("Didn't have Sound");
         }
-
         else
         {
+            musicSource.Stop();  // Stop any current music
             musicSource.clip = s.clip;
             musicSource.time = 0;
             musicSource.Play();
-
+            Debug.Log("Playing clip: " + s.clip.name);
         }
     }
 
@@ -99,12 +105,12 @@ public class Music : MonoBehaviour
     {
         if (musicSource.clip != null)
         {
-            musicSource.time = currentTime; 
+            musicSource.time = currentTime;
             musicSource.Play();
 
         }
     }
-     
+
     public void PauseMusic()
     {
         if (musicSource.isPlaying)

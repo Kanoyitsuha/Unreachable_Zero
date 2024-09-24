@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class Weapon : MonoBehaviour
 {
@@ -68,6 +69,9 @@ public class Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (IsendingScene())
+            gameObject.SetActive(false);
+
         if (WeaponType != 0)
             WeaponTimer();
 
@@ -121,6 +125,11 @@ public class Weapon : MonoBehaviour
         }
     }
 
+
+    private bool IsendingScene()
+    {
+        return SceneManager.GetActiveScene().name == "Ending" || SceneManager.GetActiveScene().buildIndex == 6;
+    }
     void BulletShoot()
     {
 

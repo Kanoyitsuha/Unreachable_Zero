@@ -44,16 +44,16 @@ public class FinishLine : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && finishLineSprite.activeInHierarchy)
         {
-            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            Debug.Log("Congratulations! You've completed the game.");
-            if (currentSceneIndex + 1 < SceneManager.sceneCountInBuildSettings)
-            {
-                SceneManager.LoadScene(currentSceneIndex + 1);
-            }
-            else
-            {
-                Debug.Log("Congratulations! You've completed the game.");
-            }
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        Debug.Log("Congratulations! You've completed the game.");
+        if (currentSceneIndex + 1 < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(currentSceneIndex + 1);
         }
+        else
+        {
+            Debug.Log("Congratulations! You've completed the game.");
+        }
+    }
     }
 }

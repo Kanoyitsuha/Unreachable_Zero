@@ -526,6 +526,90 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 118445024}
   m_CullTransparentMesh: 1
+--- !u!1 &131025377
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 131025378}
+  - component: {fileID: 131025379}
+  m_Layer: 0
+  m_Name: BackGround
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &131025378
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131025377}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -27.4067, y: 4.3113, z: 0}
+  m_LocalScale: {x: 1.4239277, y: 1.4458593, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 448269011}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &131025379
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131025377}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -38
+  m_Sprite: {fileID: 21300000, guid: 92c8f5c2f4ad43b4d8ab5f852101a759, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 12.8, y: 7.2}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &252978482
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,7 +824,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 308241986}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 961836197}
+        m_TargetAssemblyTypeName: GameOverScript, Assembly-CSharp
+        m_MethodName: MainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &308241986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1463,6 +1559,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1046159632}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &448269010
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 448269011}
+  m_Layer: 0
+  m_Name: Background
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &448269011
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448269010}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 27.44, y: -4.32, z: -0.04716411}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 131025378}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &497969687
 GameObject:
   m_ObjectHideFlags: 0
@@ -2059,7 +2187,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 628005904}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 961836197}
+        m_TargetAssemblyTypeName: GameOverScript, Assembly-CSharp
+        m_MethodName: restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &628005904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7927,9 +8067,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   music:
   - name: Game
-    clip: {fileID: 8300000, guid: 4a949d75816895e46955f1633122205f, type: 3}
+    clip: {fileID: 8300000, guid: 4159c31a0fab5cb46a33ff66ef54444c, type: 3}
   - name: Title
     clip: {fileID: 8300000, guid: 02c0105e1d623b645a1f64ab1fd027cb, type: 3}
+  - name: Game Over
+    clip: {fileID: 8300000, guid: 8f6d2d1eded25cd46b830c5b1b6d02e5, type: 3}
+  - name: CutScene 1
+    clip: {fileID: 8300000, guid: 3a2a23e806415ec4cb890aefe359c448, type: 3}
+  - name: CutScene 2
+    clip: {fileID: 8300000, guid: e6b623209e2710c4288a3a7d6f574467, type: 3}
+  - name: Boss 1
+    clip: {fileID: 8300000, guid: 25f41c968193fc34593355ae73c099c2, type: 3}
+  - name: Boss 2
+    clip: {fileID: 8300000, guid: 8798df1936197b043a1ca6424844b690, type: 3}
+  - name: Boss 3
+    clip: {fileID: 8300000, guid: 3c4e2fcd16353f94babb06a843a671c1, type: 3}
   sfx:
   - name: Easter Egg
     clip: {fileID: 8300000, guid: 640c451485fee124e9a3d76cb2ce9a83, type: 3}
@@ -7937,6 +8089,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: f94bc3b6f832d504eb1a1ff6591e2e3c, type: 3}
   - name: Enemy Hit
     clip: {fileID: 8300000, guid: b996a40da22d74b45964512aedfb83ba, type: 3}
+  - name: PlayerDie
+    clip: {fileID: 8300000, guid: d8d42ec8907f82e47b1f1c367e48447e, type: 3}
   musicSource: {fileID: 439454195}
   sfxSource: {fileID: 354072014}
 --- !u!4 &1046159632
@@ -11098,3 +11252,4 @@ SceneRoots:
   - {fileID: 1046159632}
   - {fileID: 900193314}
   - {fileID: 833189472}
+  - {fileID: 448269011}

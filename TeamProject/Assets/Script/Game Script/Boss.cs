@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossShoot : MonoBehaviour
 {
@@ -44,6 +45,7 @@ public class BossShoot : MonoBehaviour
 
     public delegate void OnDeath();
     public event OnDeath OnDeathEvent;
+
 
     void Start()
     {
@@ -204,8 +206,10 @@ public class BossShoot : MonoBehaviour
             }
             Music.instance.PlaySE("Easter Egg");
             Destroy(gameObject);
+        
         }
-        private void PlayExplosionSound()
+   
+    private void PlayExplosionSound()
         {
 
             float randomValue = Random.Range(0f, 1f);
