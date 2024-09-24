@@ -1356,6 +1356,27 @@ MonoBehaviour:
   spiralRotationSpeed: 30
   changeInterval: 1
   maxHealth: 10000
+--- !u!95 &378109334
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378109329}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ec1d5cd8c4b303b45add28d748dbc6e6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &400670372
 GameObject:
   m_ObjectHideFlags: 0
@@ -10041,6 +10062,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9098603173380889517, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 378109330}
+    - targetCorrespondingSourceObject: {fileID: 9098603173380889517, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 378109334}
   m_SourcePrefab: {fileID: 100100000, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
 --- !u!1 &1809013457 stripped
 GameObject:

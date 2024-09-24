@@ -205,6 +205,7 @@ public class BossShoot : MonoBehaviour
                 OnDeathEvent.Invoke();
             }
             Music.instance.PlaySE("Easter Egg");
+        SceneManager.LoadScene("Ending");
             Destroy(gameObject);
         
         }

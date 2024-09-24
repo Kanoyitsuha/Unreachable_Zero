@@ -38,21 +38,22 @@ public class Weapon : MonoBehaviour
     private playerMovement pMove;
     public int WeaponType;
 
+
     //public AudioClip shootingSound;
     //private AudioSource audioSource;
 
 
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        //if (instance == null)
+        //{
+        //    instance = this;
+        //    DontDestroyOnLoad(gameObject);
+        //}
+        //else
+        //{
+        //    Destroy(gameObject);
+        //}
 
             anim = GetComponent<Animator>();
         pMove = GetComponent<playerMovement>();
@@ -84,7 +85,7 @@ public class Weapon : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Space) && fireTimer <= 0f)
         {
-            anim.SetTrigger("Attack");
+            anim.SetFloat("Attack", 1);
             fireTimer = FireRate;
             switch (WeaponType)
             {
@@ -118,7 +119,12 @@ public class Weapon : MonoBehaviour
 
         }
 
-        
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            anim.SetFloat("Attack", -1);
+        }
+
+
         else
         {
             fireTimer -= Time.deltaTime;
