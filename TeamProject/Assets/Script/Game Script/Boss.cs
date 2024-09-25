@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class BossShoot : MonoBehaviour
@@ -45,12 +46,13 @@ public class BossShoot : MonoBehaviour
 
     public delegate void OnDeath();
     public event OnDeath OnDeathEvent;
-
+    public Slider healthSlider;
 
     void Start()
     {
         currentHealth = maxHealth;
-        
+        healthSlider.maxValue = maxHealth;
+        healthSlider.value = currentHealth;
     }
 
     void Update()
@@ -190,6 +192,7 @@ public class BossShoot : MonoBehaviour
         if (!isActive) return;
 
         currentHealth -= damage;
+        healthSlider.value = currentHealth;
         if (currentHealth <= 0)
         {
             Die();
@@ -204,7 +207,7 @@ public class BossShoot : MonoBehaviour
             {
                 OnDeathEvent.Invoke();
             }
-            Music.instance.PlaySE("Easter Egg");
+            Music.instance.PlaySE("PlayerDie");
         SceneManager.LoadScene("Ending");
             Destroy(gameObject);
         
@@ -217,7 +220,7 @@ public class BossShoot : MonoBehaviour
 
             if (randomValue < 0.01f)
             {
-                Music.instance.PlaySE("Easter Egg");
+                Music.instance.PlaySE("PlayerDie");
             }
             else
             {
