@@ -41,6 +41,12 @@ public class Enemy : MonoBehaviour
     public float wanderInterval = 2f;
     public float frequency = 1f;
     public float amplitude = 1f;
+    private float enterSceneDelay = 1.0f;
+    public float minDistance = 0.5f;    // Minimum distance to consider "arrived" at the target position
+    public float sceneMinX, sceneMaxX;  // X boundaries for the scene
+    public float sceneMinY, sceneMaxY;  // Y 
+    private bool hasPausedAfterEntering = false;
+    private bool stopBeforeMoving = false;
 
     private bool movingRight = true;
     private Vector2 startPosition;
@@ -88,10 +94,12 @@ public class Enemy : MonoBehaviour
         patrolEndX = entryPoint.x + patrolDistance;
         wanderTimer = wanderInterval;
         originalY = transform.position.y;
+        targetPosition = transform.position;
     }
 
     void Update()
     {
+
         if (!isActive) return;
 
         timer += Time.deltaTime;
@@ -101,10 +109,13 @@ public class Enemy : MonoBehaviour
             timer = 0;
         }
 
-
         if (!hasEnteredScene)
         {
             MoveIntoScene();
+        }
+        else if (!hasPausedAfterEntering)
+        {
+            StartCoroutine(PauseBeforeWander()); // Pause for 1 second before movement
         }
         else
         {
@@ -124,6 +135,11 @@ public class Enemy : MonoBehaviour
                     break;
             }
         }
+    }
+    IEnumerator PauseBeforeWander()
+    {
+        yield return new WaitForSeconds(enterSceneDelay); // Wait for 1 second
+        hasPausedAfterEntering = true; // Mark the delay as completed
     }
 
 
@@ -381,15 +397,27 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void WanderMovement()
+   void WanderMovement()
+{
+    // Only set the targetPosition once, when the enemy enters the scene
+    if (!hasEnteredScene)
     {
-        if (Vector2.Distance(transform.position, targetPosition) < 0.5f)
-        {
-            Vector2 randomDirection = Random.insideUnitCircle.normalized * wanderRadius;
-            targetPosition = new Vector2(entryPoint.x + randomDirection.x, entryPoint.y + randomDirection.y);
-        }
-        transform.position = Vector2.Lerp(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+        targetPosition = transform.position; // Initialize to current position
+        hasEnteredScene = true;
     }
+
+    if (Vector2.Distance(transform.position, targetPosition) < 0.5f)
+    {
+        // Pick a new random position after moving towards the current target
+        Vector2 randomDirection = Random.insideUnitCircle.normalized * wanderRadius;
+        targetPosition = new Vector2(entryPoint.x + randomDirection.x, entryPoint.y + randomDirection.y);
+    }
+
+    // Smoothly move towards the targetPosition using Vector2.Lerp
+    transform.position = Vector2.Lerp(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+}
+
+
 
     void SinusoidalMovement()
     {

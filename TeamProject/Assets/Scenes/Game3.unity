@@ -1556,15 +1556,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnerType: 2
   bulletPrefab: {fileID: 6404551892906686690, guid: 6d6f66764e58f944897f284eb31ba573, type: 3}
-  firingRate: 0.1
+  firingRate: 0.25
   bulletSpeed: 8
-  bulletLife: 2
+  bulletLife: 10
   bulletsPerRound: 64
   bulletsPerSpread: 20
   spreadAngle: 90
   spiralRotationSpeed: 60
   changeInterval: 0.35
-  maxHealth: 100000
+  maxHealth: 10000
   healthSlider: {fileID: 456820216}
 --- !u!95 &378109334
 Animator:

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Fungus;
+using UnityEngine.SceneManagement;
 public class TutorialManager : MonoBehaviour
 {
     // Array to hold all tutorial pages (images)
@@ -16,7 +17,7 @@ public class TutorialManager : MonoBehaviour
     // Reference to the Next button (optional for manual progression)
     public Button nextButton;
     public Button backButton;  // Optional Back button for navigating backward
-
+    
     private void Start()
     {
         // Initially hide all tutorial pages
@@ -39,6 +40,20 @@ public class TutorialManager : MonoBehaviour
         }
     }
 
+    public void IntroNextScene()
+    {
+        SceneManager.LoadScene("Tutorial");
+    }
+
+    public void EndingNextScene()
+    {
+        SceneManager.LoadScene("Title");
+    }
+
+    public void TutorialNextScene()
+    {
+        SceneManager.LoadScene("Game1");
+    }
     // Show the current tutorial page
     private void ShowCurrentPage()
     {
@@ -89,5 +104,5 @@ public class TutorialManager : MonoBehaviour
         // Start the cutscene in Fungus
         fungusFlowchart.ExecuteBlock(cutsceneBlockName);
     }
-
+    
 }
