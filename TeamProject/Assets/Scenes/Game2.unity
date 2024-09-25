@@ -356,6 +356,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &20290095
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20290093}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1a9cfcd993eb523418e0c3bbf2800f86, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &24963055
 GameObject:
   m_ObjectHideFlags: 0
@@ -1129,11 +1150,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.08
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.08
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalScale.z
@@ -1153,15 +1174,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 0.9999972
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.002364916
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.z
@@ -1169,11 +1190,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 0.271
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -1182,14 +1203,18 @@ PrefabInstance:
     - target: {fileID: 3810474800300008166, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: aee231c05542b5146ad06a0e69841e03, type: 3}
+      objectReference: {fileID: 21300000, guid: f134de8d6e0be0847a860e048398370d, type: 3}
     - target: {fileID: 3810474800300008166, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_SortingOrder
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      propertyPath: maxHealth
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletLife
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: firingRate
@@ -1197,7 +1222,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletSpeed
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: damageSound
@@ -1225,7 +1250,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletsPerSpread
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: ItemDrops.Array.data[0]
@@ -1273,7 +1298,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9098603173380889517, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_Name
-      value: Mask (7)
+      value: Tenga
       objectReference: {fileID: 0}
     - target: {fileID: 9098603173380889517, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_IsActive
@@ -1286,6 +1311,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9098603173380889517, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 169746031}
+    - targetCorrespondingSourceObject: {fileID: 9098603173380889517, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 169746034}
   m_SourcePrefab: {fileID: 100100000, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
 --- !u!1 &169746030 stripped
 GameObject:
@@ -1399,6 +1427,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a6d7a42ee4c0274e8d5627b030120c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &169746034
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169746030}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d61f1a443002cde44a3b61ad2c1ede4c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &187514654
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1437,19 +1486,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0.99999726
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.0023670695
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 0.271
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -1468,8 +1517,12 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      propertyPath: maxHealth
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletLife
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: firingRate
@@ -1477,7 +1530,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletSpeed
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: damageSound
@@ -1505,7 +1558,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletsPerSpread
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: ItemDrops.Array.data[0]
@@ -1566,6 +1619,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9098603173380889517, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 187514656}
+    - targetCorrespondingSourceObject: {fileID: 9098603173380889517, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 187514659}
   m_SourcePrefab: {fileID: 100100000, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
 --- !u!1 &187514655 stripped
 GameObject:
@@ -1679,6 +1735,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a6d7a42ee4c0274e8d5627b030120c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &187514659
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 187514655}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1a9cfcd993eb523418e0c3bbf2800f86, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &209494241
 GameObject:
   m_ObjectHideFlags: 1
@@ -1924,11 +2001,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: maxHealth
-      value: 1000
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletLife
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: firingRate
@@ -1936,7 +2013,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletSpeed
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: damageSound
@@ -1964,7 +2041,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletsPerSpread
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: ItemDrops.Array.data[0]
@@ -2200,19 +2277,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0.99999726
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.0023670695
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 0.271
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -2231,8 +2308,12 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      propertyPath: maxHealth
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletLife
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: firingRate
@@ -2240,7 +2321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletSpeed
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: damageSound
@@ -2268,7 +2349,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletsPerSpread
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: ItemDrops.Array.data[0]
@@ -2329,6 +2410,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9098603173380889517, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 271287373}
+    - targetCorrespondingSourceObject: {fileID: 9098603173380889517, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 271287376}
   m_SourcePrefab: {fileID: 100100000, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
 --- !u!1 &271287372 stripped
 GameObject:
@@ -2442,6 +2526,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a6d7a42ee4c0274e8d5627b030120c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &271287376
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 271287372}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1a9cfcd993eb523418e0c3bbf2800f86, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &274533293
 GameObject:
   m_ObjectHideFlags: 0
@@ -2585,6 +2690,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      propertyPath: maxHealth
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletSpeed
       value: 2
       objectReference: {fileID: 0}
@@ -2654,19 +2763,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0.99999726
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.0023670695
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 0.271
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -2685,8 +2794,12 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      propertyPath: maxHealth
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletLife
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: firingRate
@@ -2694,7 +2807,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletSpeed
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: damageSound
@@ -2722,7 +2835,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletsPerSpread
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: ItemDrops.Array.data[0]
@@ -2783,6 +2896,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9098603173380889517, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 335996874}
+    - targetCorrespondingSourceObject: {fileID: 9098603173380889517, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 335996877}
   m_SourcePrefab: {fileID: 100100000, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
 --- !u!1 &335996873 stripped
 GameObject:
@@ -2896,6 +3012,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a6d7a42ee4c0274e8d5627b030120c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &335996877
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335996873}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1a9cfcd993eb523418e0c3bbf2800f86, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &337973642
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2961,12 +3098,16 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      propertyPath: maxHealth
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: moveSpeed
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletLife
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: firingRate
@@ -2974,7 +3115,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletSpeed
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: damageSound
@@ -3516,8 +3657,12 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      propertyPath: maxHealth
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletLife
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: firingRate
@@ -3525,7 +3670,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletSpeed
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: damageSound
@@ -3553,7 +3698,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletsPerSpread
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: ItemDrops.Array.data[0]
@@ -3892,11 +4037,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: maxHealth
-      value: 1000
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletLife
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: firingRate
@@ -3904,7 +4049,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletSpeed
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: damageSound
@@ -3932,7 +4077,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletsPerSpread
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: ItemDrops.Array.data[0]
@@ -4137,12 +4282,16 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      propertyPath: maxHealth
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: moveSpeed
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletLife
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: firingRate
@@ -4150,7 +4299,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletSpeed
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: damageSound
@@ -9964,12 +10113,16 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      propertyPath: maxHealth
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: moveSpeed
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletLife
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: firingRate
@@ -9977,7 +10130,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletSpeed
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: damageSound
@@ -10132,12 +10285,16 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      propertyPath: maxHealth
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: moveSpeed
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletLife
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: firingRate
@@ -10145,7 +10302,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletSpeed
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: damageSound
@@ -10272,11 +10429,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.08
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.08
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalScale.z
@@ -10296,15 +10453,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 0.9999972
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.002364916
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.z
@@ -10312,11 +10469,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 0.271
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -10325,14 +10482,18 @@ PrefabInstance:
     - target: {fileID: 3810474800300008166, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: aee231c05542b5146ad06a0e69841e03, type: 3}
+      objectReference: {fileID: 21300000, guid: f134de8d6e0be0847a860e048398370d, type: 3}
     - target: {fileID: 3810474800300008166, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_SortingOrder
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      propertyPath: maxHealth
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletLife
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: firingRate
@@ -10340,7 +10501,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletSpeed
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: damageSound
@@ -10368,7 +10529,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletsPerSpread
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: ItemDrops.Array.data[0]
@@ -10429,6 +10590,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9098603173380889517, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 696619075}
+    - targetCorrespondingSourceObject: {fileID: 9098603173380889517, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 696619078}
   m_SourcePrefab: {fileID: 100100000, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
 --- !u!1 &696619074 stripped
 GameObject:
@@ -10542,6 +10706,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a6d7a42ee4c0274e8d5627b030120c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &696619078
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696619074}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d61f1a443002cde44a3b61ad2c1ede4c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &721649908
 GameObject:
   m_ObjectHideFlags: 0
@@ -21708,11 +21893,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: maxHealth
-      value: 1000
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletLife
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: firingRate
@@ -21720,7 +21905,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletSpeed
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: damageSound
@@ -21748,7 +21933,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletsPerSpread
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: ItemDrops.Array.data[0]
@@ -22245,12 +22430,16 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      propertyPath: maxHealth
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: moveSpeed
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletLife
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: firingRate
@@ -22258,7 +22447,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletSpeed
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: damageSound
@@ -22573,11 +22762,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: maxHealth
-      value: 1000
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletLife
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: firingRate
@@ -22585,7 +22774,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletSpeed
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: damageSound
@@ -22613,7 +22802,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletsPerSpread
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: ItemDrops.Array.data[0]
@@ -22905,12 +23094,16 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      propertyPath: maxHealth
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: moveSpeed
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletLife
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: firingRate
@@ -22918,7 +23111,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletSpeed
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: damageSound
@@ -23073,12 +23266,16 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      propertyPath: maxHealth
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: moveSpeed
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletLife
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: firingRate
@@ -23086,7 +23283,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletSpeed
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: damageSound
@@ -23302,6 +23499,10 @@ PrefabInstance:
     - target: {fileID: 3810474800300008166, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_SortingOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      propertyPath: maxHealth
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletSpeed
@@ -28818,11 +29019,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: maxHealth
-      value: 1000
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletLife
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: firingRate
@@ -28830,7 +29031,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletSpeed
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: damageSound
@@ -28858,7 +29059,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletsPerSpread
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: ItemDrops.Array.data[0]
@@ -28961,19 +29162,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0.99999726
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.0023670695
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 0.271
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -28992,8 +29193,12 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      propertyPath: maxHealth
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletLife
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: firingRate
@@ -29001,7 +29206,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletSpeed
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: damageSound
@@ -29029,7 +29234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletsPerSpread
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: ItemDrops.Array.data[0]
@@ -29090,6 +29295,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9098603173380889517, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1569087666}
+    - targetCorrespondingSourceObject: {fileID: 9098603173380889517, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1569087669}
   m_SourcePrefab: {fileID: 100100000, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
 --- !u!1 &1569087665 stripped
 GameObject:
@@ -29203,6 +29411,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a6d7a42ee4c0274e8d5627b030120c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1569087669
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569087665}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1a9cfcd993eb523418e0c3bbf2800f86, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1599260615 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9098603173380889517, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
@@ -29899,19 +30128,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0.99999726
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.0023670695
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 0.271
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -29930,8 +30159,12 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      propertyPath: maxHealth
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletLife
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: firingRate
@@ -29939,7 +30172,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletSpeed
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: damageSound
@@ -29967,7 +30200,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletsPerSpread
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: ItemDrops.Array.data[0]
@@ -30028,6 +30261,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9098603173380889517, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1698709736}
+    - targetCorrespondingSourceObject: {fileID: 9098603173380889517, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1698709739}
   m_SourcePrefab: {fileID: 100100000, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
 --- !u!1 &1698709735 stripped
 GameObject:
@@ -30141,6 +30377,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a6d7a42ee4c0274e8d5627b030120c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1698709739
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698709735}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1a9cfcd993eb523418e0c3bbf2800f86, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1735809355
 GameObject:
   m_ObjectHideFlags: 0
@@ -30599,19 +30856,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0.99999726
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.0023670695
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 0.271
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -30630,8 +30887,12 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      propertyPath: maxHealth
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletLife
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: firingRate
@@ -30639,7 +30900,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletSpeed
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: damageSound
@@ -30667,7 +30928,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletsPerSpread
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: ItemDrops.Array.data[0]
@@ -30728,6 +30989,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9098603173380889517, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 20290094}
+    - targetCorrespondingSourceObject: {fileID: 9098603173380889517, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 20290095}
   m_SourcePrefab: {fileID: 100100000, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
 --- !u!1 &1882943232
 GameObject:
@@ -31031,19 +31295,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0.99999726
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.0023670695
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 0.271
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -31062,8 +31326,12 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      propertyPath: maxHealth
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletLife
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: firingRate
@@ -31071,7 +31339,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletSpeed
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: damageSound
@@ -31099,7 +31367,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletsPerSpread
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: ItemDrops.Array.data[0]
@@ -31160,6 +31428,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9098603173380889517, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1908057442}
+    - targetCorrespondingSourceObject: {fileID: 9098603173380889517, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1908057445}
   m_SourcePrefab: {fileID: 100100000, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
 --- !u!1 &1908057441 stripped
 GameObject:
@@ -31273,6 +31544,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a6d7a42ee4c0274e8d5627b030120c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1908057445
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908057441}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1a9cfcd993eb523418e0c3bbf2800f86, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1919871833
 GameObject:
   m_ObjectHideFlags: 0
@@ -31569,19 +31861,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0.99999726
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.0023670695
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 0.271
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -31600,8 +31892,12 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      propertyPath: maxHealth
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletLife
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: firingRate
@@ -31609,7 +31905,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletSpeed
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: damageSound
@@ -31637,7 +31933,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletsPerSpread
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: ItemDrops.Array.data[0]
@@ -31698,6 +31994,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9098603173380889517, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1958229136}
+    - targetCorrespondingSourceObject: {fileID: 9098603173380889517, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1958229139}
   m_SourcePrefab: {fileID: 100100000, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
 --- !u!1 &1958229135 stripped
 GameObject:
@@ -31811,6 +32110,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a6d7a42ee4c0274e8d5627b030120c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1958229139
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958229135}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1a9cfcd993eb523418e0c3bbf2800f86, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &2008244624
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31876,12 +32196,16 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      propertyPath: maxHealth
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: moveSpeed
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletLife
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: firingRate
@@ -31889,7 +32213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletSpeed
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: damageSound
@@ -32193,7 +32517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0662c333fd3456f4cae20b32f63e3404, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 100
   currentHealth: 0
   healthBar: {fileID: 209587763}
   weapon: {fileID: 2024167050}
@@ -32963,11 +33287,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: maxHealth
-      value: 1000
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletLife
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: firingRate
@@ -32975,7 +33299,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletSpeed
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: damageSound
@@ -33003,7 +33327,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: bulletsPerSpread
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: ItemDrops.Array.data[0]

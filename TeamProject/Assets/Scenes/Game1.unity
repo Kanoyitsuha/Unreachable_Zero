@@ -321,7 +321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: firingRate
-      value: 0.35
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: damageSound
@@ -341,6 +341,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: movementType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      propertyPath: bulletsPerSpread
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
@@ -640,7 +644,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: firingRate
-      value: 0.35
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: damageSound
@@ -660,6 +664,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: movementType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      propertyPath: bulletsPerSpread
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
@@ -847,7 +855,7 @@ Animator:
   m_GameObject: {fileID: 34745102}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 58479951ca59c354fa89c2902773ed71, type: 2}
+  m_Controller: {fileID: 9100000, guid: ca2bb5a14214f2c408228968d9c80ccb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -6356,7 +6364,7 @@ Animator:
   m_GameObject: {fileID: 262884307}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 58479951ca59c354fa89c2902773ed71, type: 2}
+  m_Controller: {fileID: 9100000, guid: ca2bb5a14214f2c408228968d9c80ccb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -6639,7 +6647,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: firingRate
-      value: 0.35
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      propertyPath: bulletSpeed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: damageSound
@@ -6945,7 +6957,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: firingRate
-      value: 0.35
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      propertyPath: bulletSpeed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: damageSound
@@ -7809,7 +7825,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.x
@@ -7817,7 +7833,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.z
@@ -7829,7 +7845,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -7838,7 +7854,7 @@ PrefabInstance:
     - target: {fileID: 3810474800300008166, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 10eb650b66741ee4692c965a029eade6, type: 3}
+      objectReference: {fileID: 21300000, guid: 9b1a6397b62d7ca42a9baf47bf1525cc, type: 3}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: moveSpeed
       value: 3
@@ -7849,7 +7865,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: firingRate
-      value: 0.35
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      propertyPath: bulletSpeed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: damageSound
@@ -7857,7 +7877,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 640c451485fee124e9a3d76cb2ce9a83, type: 3}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: spawnerType
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: entryPoint.x
@@ -8044,7 +8064,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.x
@@ -8052,7 +8072,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.z
@@ -8064,7 +8084,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -8073,7 +8093,7 @@ PrefabInstance:
     - target: {fileID: 3810474800300008166, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 10eb650b66741ee4692c965a029eade6, type: 3}
+      objectReference: {fileID: 21300000, guid: 9b1a6397b62d7ca42a9baf47bf1525cc, type: 3}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: moveSpeed
       value: 3
@@ -8084,7 +8104,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: firingRate
-      value: 0.35
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      propertyPath: bulletSpeed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: damageSound
@@ -8092,7 +8116,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 640c451485fee124e9a3d76cb2ce9a83, type: 3}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: spawnerType
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: entryPoint.x
@@ -9025,7 +9049,7 @@ Animator:
   m_GameObject: {fileID: 917905464}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 58479951ca59c354fa89c2902773ed71, type: 2}
+  m_Controller: {fileID: 9100000, guid: ca2bb5a14214f2c408228968d9c80ccb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -20307,7 +20331,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: firingRate
-      value: 0.35
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      propertyPath: bulletSpeed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: damageSound
@@ -20898,7 +20926,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 29.77
+      value: 30.81
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -20910,7 +20938,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.x
@@ -20918,7 +20946,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalRotation.z
@@ -20930,7 +20958,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2265666862641952658, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -20939,7 +20967,7 @@ PrefabInstance:
     - target: {fileID: 3810474800300008166, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 10eb650b66741ee4692c965a029eade6, type: 3}
+      objectReference: {fileID: 21300000, guid: 3e39960e4ea7f454da2b6176622b62a0, type: 3}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: moveSpeed
       value: 3
@@ -20950,7 +20978,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: firingRate
-      value: 0.35
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      propertyPath: bulletSpeed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: damageSound
@@ -20958,7 +20990,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 640c451485fee124e9a3d76cb2ce9a83, type: 3}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: spawnerType
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: entryPoint.x
@@ -21022,7 +21054,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9098603173380889517, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_Name
-      value: Ghost (5)
+      value: Yuki
       objectReference: {fileID: 0}
     - target: {fileID: 9098603173380889517, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: m_IsActive
@@ -21110,7 +21142,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: firingRate
-      value: 0.35
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      propertyPath: bulletSpeed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: damageSound
@@ -21822,7 +21858,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: firingRate
-      value: 0.35
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: damageSound
@@ -21842,6 +21878,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: movementType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      propertyPath: bulletsPerSpread
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
@@ -27853,7 +27893,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: firingRate
-      value: 0.35
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: damageSound
@@ -27873,6 +27913,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: movementType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      propertyPath: bulletsPerSpread
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
@@ -28004,7 +28048,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: firingRate
-      value: 0.35
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: damageSound
@@ -28024,6 +28068,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: movementType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      propertyPath: bulletsPerSpread
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
@@ -28587,7 +28635,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: firingRate
-      value: 0.35
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      propertyPath: bulletSpeed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: damageSound
@@ -29009,7 +29061,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0662c333fd3456f4cae20b32f63e3404, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 100
   currentHealth: 0
   healthBar: {fileID: 2117417321}
   weapon: {fileID: 2024167050}
@@ -29536,7 +29588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: firingRate
-      value: 0.35
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: damageSound
@@ -29556,6 +29608,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
       propertyPath: movementType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
+      propertyPath: bulletsPerSpread
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8372670569130886070, guid: 986fbb1dcb99c81488bf38109c5c6b8b, type: 3}
