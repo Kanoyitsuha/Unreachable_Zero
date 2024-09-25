@@ -1,21 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-
+using Fungus;
 public class TutorialManager : MonoBehaviour
 {
     // Array to hold all tutorial pages (images)
     public GameObject[] tutorialPages;
     private int currentPage = 0;
 
+    public GameObject tutorialPanel;
+    public Flowchart fungusFlowchart; // Reference to the Fungus Flowchart
+    public string cutsceneBlockName;  // The name of the Fungus Block to start the cutscene
+
     // Reference to the Next button (optional for manual progression)
     public Button nextButton;
     public Button backButton;  // Optional Back button for navigating backward
-    public GameObject[] TickButton;
-    public AudioSource audioSource;
-    public AudioClip SpacebarSound;
 
     private void Start()
     {
@@ -23,11 +23,6 @@ public class TutorialManager : MonoBehaviour
         foreach (GameObject page in tutorialPages)
         {
             page.SetActive(false);
-        }
-
-        foreach(GameObject Tick in TickButton)
-        {
-            Tick.SetActive(false);
         }
 
         // Show the first tutorial page
@@ -44,17 +39,6 @@ public class TutorialManager : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        // Check if the spacebar is pressed and the current page is the last one
-        if (currentPage == tutorialPages.Length - 1 && Input.GetKeyDown(KeyCode.Space))
-        {
-            PlaySpacebarSound();
-            NextScene();  // Call the function to load the next scene
-        }
-        TickButtonManager();
-    }
-
     // Show the current tutorial page
     private void ShowCurrentPage()
     {
@@ -68,7 +52,6 @@ public class TutorialManager : MonoBehaviour
         {
             nextButton.interactable = currentPage < tutorialPages.Length - 1;
         }
-
         if (backButton != null)
         {
             backButton.interactable = currentPage > 0;
@@ -80,12 +63,9 @@ public class TutorialManager : MonoBehaviour
     {
         if (currentPage < tutorialPages.Length - 1)
         {
-            // Hide current page
-            tutorialPages[currentPage].SetActive(false);
-            // Increment to the next page
-            currentPage++;
-            // Show the next page
-            ShowCurrentPage();
+            tutorialPages[currentPage].SetActive(false);  // Hide current page
+            currentPage++;  // Increment to the next page
+            ShowCurrentPage();  // Show the next page
         }
     }
 
@@ -94,40 +74,20 @@ public class TutorialManager : MonoBehaviour
     {
         if (currentPage > 0)
         {
-            // Hide current page
-            tutorialPages[currentPage].SetActive(false);
-            // Decrement to the previous page
-            currentPage--;
-            // Show the previous page
-            ShowCurrentPage();
+            tutorialPages[currentPage].SetActive(false);  // Hide current page
+            currentPage--;  // Decrement to the previous page
+            ShowCurrentPage();  // Show the previous page
         }
     }
 
-    // Method to load the next scene
-    public void NextScene()
+
+    public void EndTutorial()
     {
-        SceneManager.LoadScene("Game1");  // Replace "Game1" with the name or index of your scene
+        // Hide the tutorial panel
+        tutorialPanel.SetActive(false);
+
+        // Start the cutscene in Fungus
+        fungusFlowchart.ExecuteBlock(cutsceneBlockName);
     }
 
-    public void PlaySpacebarSound()
-    {
-        if (SpacebarSound!=null)
-        {
-            audioSource.PlayOneShot(SpacebarSound);
-
-        }
-
-    }
-
-    public void TickButtonManager()
-    {
-        if (currentPage >= 2)
-        {
-            foreach (GameObject Tick in TickButton)
-            {
-                Tick.SetActive(true);
-
-            }
-        }
-    }
 }

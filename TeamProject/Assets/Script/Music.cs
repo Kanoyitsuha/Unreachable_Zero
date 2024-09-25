@@ -3,18 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
-using Unity.VisualScripting;
 
 public class Music : MonoBehaviour
 {
     public static Music instance;
     public Sound[] music, sfx;
     public AudioSource musicSource, sfxSource;
-    private int currentSceneIndex;
 
-    private float currentTime = 0;
+    private int previousSceneIndex = -1;  // Store the previously active scene
     private string currentMusicName = "";
-
+    private float currentTime = 0;
 
     public void Awake()
     {
@@ -22,65 +20,66 @@ public class Music : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
-
         }
         else
         {
             Destroy(gameObject);
         }
-
     }
 
     private void Start()
     {
-        PlayMusic("Title");
+        PlayMusicIfNotAlreadyPlaying("Title");  // Default music for title screen
     }
 
     private void Update()
     {
-        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
-
-        switch (currentSceneIndex)
+        // Check if the scene has changed
+        if (currentSceneIndex != previousSceneIndex)
         {
+            OnSceneChanged(currentSceneIndex);  // Change music based on the scene
+            previousSceneIndex = currentSceneIndex;  // Update the previous scene
+        }
+    }
+
+    // Handles changing music when the scene is switched
+    private void OnSceneChanged(int sceneIndex)
+    {
+        switch (sceneIndex)
+        {
+            case 0:
+                PlayMusicIfNotAlreadyPlaying("Title");
+                break;
             case 1:
-                PlayMusic("CutScene 1");
+                PlayMusicIfNotAlreadyPlaying("CutScene 1");
                 break;
             case 2:
-                PlayMusic("Title");
+                PlayMusicIfNotAlreadyPlaying("Title");
                 break;
             case 3:
             case 4:
-                PlayMusic("Game");
+                PlayMusicIfNotAlreadyPlaying("Game");
                 break;
             case 5:
-                randomMusic();
+                PlayRandomMusic();
                 break;
             case 6:
-                PlayMusic("CutScene 2");
+                PlayMusicIfNotAlreadyPlaying("CutScene 2");
                 break;
-
+            default:
+                Debug.LogWarning("No specific music set for this scene.");
+                break;
         }
-        //if (currentSceneIndex == 2 && !musicChangedForScene1)
-        //{
-        //    PlayMusic("Game");
-        //    musicChangedForScene1 = true;
-        //}
-
-        //if (currentSceneIndex == 0 && musicChangedForScene1)
-        //{
-        //    PlayMusic("Title");
-        //    musicChangedForScene1 = false;
-        //}
-
     }
 
     private void PlayMusicIfNotAlreadyPlaying(string musicName)
     {
-        if (currentMusicName != musicName)  // Only change music if it's different
+        if (currentMusicName != musicName)  // Change music only if it hasn't been played
         {
             PlayMusic(musicName);
-            currentMusicName = musicName;  // Track currently playing music
+            currentMusicName = musicName;  // Store the current playing music
         }
     }
 
@@ -89,19 +88,29 @@ public class Music : MonoBehaviour
         Sound s = Array.Find(music, x => x.name == name);
         if (s == null)
         {
-            Debug.Log("Didn't have Sound");
+            Debug.LogWarning($"Sound '{name}' not found in the music list.");
+            return;
         }
-        else
-        {
-            musicSource.Stop();  // Stop any current music
-            musicSource.clip = s.clip;
-            musicSource.time = 0;
-            musicSource.Play();
-            Debug.Log("Playing clip: " + s.clip.name);
-        }
+
+        musicSource.clip = s.clip;
+        musicSource.time = 0;  // Start the clip from the beginning
+        musicSource.Play();
+        currentMusicName = name;  // Track the currently playing music
+        Debug.Log($"Playing music: {s.clip.name}");
     }
 
-    public void ContinueMusic()
+    private void PlayRandomMusic()
+    {
+        int randomIndex = UnityEngine.Random.Range(0, 3);
+        string[] randomTracks = { "Boss 1", "Boss 2", "Boss 3" };
+        PlayMusicIfNotAlreadyPlaying(randomTracks[randomIndex]);
+    }
+
+    // Other methods (ContinueMusic, PauseMusic, PlaySE, ToggleMusic, etc.) stay the same...
+
+
+
+public void ContinueMusic()
     {
         if (musicSource.clip != null)
         {
@@ -158,17 +167,7 @@ public class Music : MonoBehaviour
     {
         musicSource.Stop();
         currentTime = 0;
-    }
-    void randomMusic()
-    {
-        float randomValue = UnityEngine.Random.Range(0f, 1f);
-
-        if (randomValue < 0.3f)
-            Music.instance.PlayMusic("Boss 1");
-        if (randomValue < 0.6f && randomValue > 0.3f)
-            Music.instance.PlayMusic("Boss 2");
-        else
-            Music.instance.PlayMusic("Boss 3");
 
     }
+    
 }
