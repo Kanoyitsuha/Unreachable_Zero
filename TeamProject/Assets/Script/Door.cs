@@ -1,4 +1,4 @@
-    using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,18 +8,18 @@ public class Door : MonoBehaviour
     [SerializeField] private CameraController cam;
     [SerializeField] private GameObject doorSprite;
     [SerializeField] private Enemy[] enemies;
-    [SerializeField] private GameObject[] enemyToActive;
+    [SerializeField] private GameObject[] enemyToActivate;
 
     private int enemiesRemaining;
 
     private void Start()
     {
         doorSprite.SetActive(false);
-        foreach (GameObject enemyToActives in enemyToActive)
+        foreach (GameObject enemyToActivate in enemyToActivate)
         {
-            enemyToActives.SetActive(false);
-
+            enemyToActivate.SetActive(false);
         }
+
         enemiesRemaining = enemies.Length;
 
         foreach (Enemy enemy in enemies)
@@ -51,17 +51,15 @@ public class Door : MonoBehaviour
         if (collision.CompareTag("Player") && doorSprite.activeInHierarchy)
         {
             cam.MoveToNewRoom(nextRoom);
-            ActivateEnemys();
+            ActivateEnemies();
         }
     }
 
-    private void ActivateEnemys()
+    private void ActivateEnemies()
     {
-        foreach (GameObject enemyToActives in enemyToActive)
+        foreach (GameObject enemyToActivate in enemyToActivate)
         {
-            enemyToActives.SetActive(true);
+            enemyToActivate.SetActive(true);
         }
-
-
     }
 }
