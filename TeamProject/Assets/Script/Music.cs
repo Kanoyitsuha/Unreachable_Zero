@@ -140,7 +140,7 @@ public void ContinueMusic()
 
         else
         {
-            sfxSource.PlayOneShot(s.clip);
+            sfxSource.PlayOneShot(s.clip, sfxSource.volume / 2);
         }
     }
 
