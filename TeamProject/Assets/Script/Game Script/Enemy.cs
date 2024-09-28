@@ -147,7 +147,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        PlayExplosionSound();
+        //PlayExplosionSound();
         if (currentHealth <= 0)
         {
             Die();
